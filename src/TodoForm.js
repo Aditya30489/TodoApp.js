@@ -4,6 +4,12 @@ import React, { useState, useEffect} from 'react';
 function TodoForm(props) {
   const [input, setInput] = useState(props.edit ? props.edit.value : '');
 
+  //const inputRef = useRef(null);
+
+//   useEffect(() => {
+//     inputRef.current.focus();
+//   });
+
   const handleChange = e => {
     setInput(e.target.value);
   };
@@ -23,15 +29,25 @@ function TodoForm(props) {
     <form onSubmit={handleSubmit} className='todo-form text-center'>
       {props.edit ? (
         <>
-          <input placeholder='Update your todo' value={input} onChange={handleChange} name='text'
-            className='todo-input edit' />
-          <button onClick={handleSubmit} className='todo-button edit'>Update</button>
+          <input placeholder='Update your item' value={input} onChange={handleChange} name='text'
+            //ref={inputRef}
+            className='todo-input edit'
+          />
+          <button onClick={handleSubmit} className='todo-button edit m-2'>Update</button>
         </>
       ) : (
         <>
-          <input placeholder='Add a todo' value={input} onChange={handleChange} name='text' className='todo-input' />
-          <button onClick={handleSubmit} className='todo-button'>
-            Add todo
+          <input
+            placeholder='Add a Todo'
+            value={input}
+            onChange={handleChange}
+            name='text'
+            className='todo-input text-large m-3'
+            id='info'
+            //ref={inputRef}
+          />
+          <button onClick={handleSubmit} className='todo-button bg-primary text-white' id="btn2">
+            Add Todo
           </button>
         </>
       )}

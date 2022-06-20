@@ -22,7 +22,9 @@ function App() {
     //   </Routes>
     // </div>
     <div className='todo-app'>
-      <TodoList />
+      <TodoList/>
+      <iframe src="https://embed.lottiefiles.com/animation/57927" id='frame'></iframe>
+      <iframe src="https://embed.lottiefiles.com/animation/75699" id ='f1'></iframe>
     </div>
   );
 }

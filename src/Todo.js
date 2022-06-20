@@ -22,16 +22,19 @@ const Todo = ({ todos, completeTodo, removeTodo, updateTodo }) => {
   }
 
   return todos.map((todo, index) => (
-    <div className='text-center '>
+    <div className='text-center'>
+    <div className='bg-success' id='q'>
     <div className={todo.isComplete ? 'todo-row complete' : 'todo-row'} key={index}>
-      <div key={todo.id} onClick={() => completeTodo(todo.id)} className='d-inline'>
+      <div key={todo.id} onClick={() => completeTodo(todo.id)} className='todo text-white d-inline'>
         {todo.text}
-        
       </div>
-        <div className='icons d-inline'>
-          <RiCloseCircleLine onClick={() => removeTodo(todo.id)} className='delete-icon' />
-          <TiEdit onClick={() => setEdit({ id: todo.id, value: todo.text })} className='edit-icon' />
+        <div className='icons d-inline' id='w'>
+          <RiCloseCircleLine onClick={() => removeTodo(todo.id)} className='delete-icon text-warning m-2' id='icon1' />
         </div>
+        <div className='icons d-inline' id='e'>
+          <TiEdit onClick={() => setEdit({ id: todo.id, value: todo.text })} className='edit-icon text-info m-1' id='icon2'/>
+        </div>
+      </div>
       </div>
       </div>
   ));
